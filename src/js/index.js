@@ -2,10 +2,11 @@ import './swiper.js'
 import '../scss/style.scss'
 
 const moreButtons = document.querySelectorAll('.btn-more')
+const closeButtons = document.querySelectorAll('.img-burger-close')
+
 const btnReadMore = document.querySelector('.box__read-more')
 const boxText = document.querySelector('.box__text')
 
-const wrapper = document.querySelector('.wrapper')
 const menu = document.querySelector('.pop-menu')
 
 const requestCall = document.querySelector('.request-call')
@@ -16,42 +17,6 @@ let flagReadMore = false
 const formName = document.getElementById('form__name')
 const phone = document.getElementById('request-call__phone')
 
-let screenWidth = window.innerWidth
-const breakPoint = 1119
-
-;(function width() {
-  window.addEventListener('resize', function () {
-    screenWidth = document.body.clientWidth
-  })
-})()
-
-// автофокус для input
-document.addEventListener('click', function () {
-  formName.focus()
-  phone.focus()
-})
-
-function withOutBox() {
-  document.addEventListener('mousedown', (e) => {
-    const clickMenu = e.composedPath().includes(menu)
-    const clickRequestCall = e.composedPath().includes(requestCall)
-    const clickFeedback = e.composedPath().includes(feedback)
-    if (!clickMenu && !clickRequestCall && !clickFeedback) {
-      menu.classList.remove('pop-menu--open')
-      requestCall.classList.remove('request-call--open')
-      feedback.classList.remove('feedback--open')
-      wrapper.classList.remove('wrapper--hidden')
-      menu.style.display = 'block'
-    }
-  })
-}
-
-document.addEventListener('click', () => {
-  if (wrapper.classList.contains('wrapper--hidden')) {
-    withOutBox()
-  }
-})
-
 document.addEventListener('DOMContentLoaded', function () {
   const buttons = document.querySelectorAll('.btn')
 
@@ -61,59 +26,49 @@ document.addEventListener('DOMContentLoaded', function () {
     switch (buttonId) {
       case 'header-burger':
         menu.classList.toggle('pop-menu--open')
-        wrapper.classList.toggle('wrapper--hidden')
-        console.log('pressed: ' + buttonId)
-        break
-      case 'pop-menu__btn-close':
-        menu.classList.toggle('pop-menu--open')
-        wrapper.classList.toggle('wrapper--hidden')
         break
       case 'pop-menu__img-call':
         requestCall.classList.toggle('request-call--open')
-        menu.classList.toggle('pop-menu--open')
-        if (screenWidth > breakPoint) {
-          wrapper.classList.add('wrapper--hidden')
-          menu.style.display = 'none'
-        }
         break
       case 'pop-menu__img-chat':
         feedback.classList.toggle('feedback--open')
-        menu.classList.toggle('pop-menu--open')
-        if (screenWidth > breakPoint) {
-          wrapper.classList.add('wrapper--hidden')
-          menu.style.display = 'none'
-        }
-        break
-      case 'request-call__btn-close':
-        requestCall.classList.toggle('request-call--open')
-        wrapper.classList.remove('wrapper--hidden')
-        if (screenWidth > breakPoint) {
-          menu.style.display = 'block'
-        }
-        break
-      case 'feedback__btn-close':
-        feedback.classList.toggle('feedback--open')
-        wrapper.classList.remove('wrapper--hidden')
-        if (screenWidth > breakPoint) {
-          menu.style.display = 'block'
-        }
         break
       case 'header-img-call':
         requestCall.classList.toggle('request-call--open')
-        wrapper.classList.toggle('wrapper--hidden')
         break
       case 'header-img-chat':
         feedback.classList.toggle('feedback--open')
-        wrapper.classList.toggle('wrapper--hidden')
-
         break
     }
   }
-
   buttons.forEach((button) => {
     button.addEventListener('click', handleButtonClick)
   })
 })
+
+// Close
+
+closeButtons.forEach((elem) => {
+  elem.addEventListener('click', () => {
+    requestCall.classList.remove('request-call--open')
+    feedback.classList.remove('feedback--open')
+    menu.classList.remove('pop-menu--open')
+  })
+})
+
+document.getElementById('request-call').onclick = function () {
+  requestCall.classList.remove('request-call--open')
+}
+
+document.getElementById('pop-menu').onclick = function () {
+  menu.classList.remove('pop-menu--open')
+}
+
+document.getElementById('feedback').onclick = function () {
+  feedback.classList.remove('feedback--open')
+}
+
+// Показать все
 
 moreButtons.forEach((elem) => {
   elem.addEventListener('click', () => {
@@ -130,6 +85,8 @@ moreButtons.forEach((elem) => {
   })
 })
 
+//Читать далее
+
 btnReadMore.addEventListener('click', function () {
   if (!flagReadMore) {
     boxText.classList.add('box__text--open')
@@ -142,4 +99,10 @@ btnReadMore.addEventListener('click', function () {
     btnReadMore.textContent = 'Читать далее'
     flagReadMore = false
   }
+})
+
+// автофокус для input
+document.addEventListener('click', function () {
+  formName.focus()
+  phone.focus()
 })

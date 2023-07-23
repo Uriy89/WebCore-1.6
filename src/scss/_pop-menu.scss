@@ -6,15 +6,19 @@
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  z-index: 10;
+
   display: none;
 }
 
 .pop-menu--open {
   display: block;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  z-index: 1000;
 }
 
-.pop-menu--hidden {
+.pop-menu--open::-webkit-scrollbar {
   display: none;
 }
 
@@ -125,15 +129,13 @@ li.item {
 
 @media screen and (min-width: 321px) and (max-width: 1119px) {
   .pop-menu {
-    display: none;
-    width: 320px;
+    width: 100%;
     height: 100vh;
-
-    box-shadow: 3px 0 55px 0 $shadow;
   }
 
-  .pop-menu--open {
-    display: block;
+  .conent {
+    width: 320px;
+    box-shadow: 3px 0 55px 0 $shadow;
   }
 }
 

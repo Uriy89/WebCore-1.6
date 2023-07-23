@@ -9,8 +9,8 @@
     <link href="./scss/style.scss" rel="stylesheet" />
   </head>
   <body>
-    <aside class="pop-menu pop-menu--mobile pop-menu--services">
-      <div class="test">
+    <aside class="pop-menu" id="pop-menu">
+      <div class="conent">
         <header class="pop-menu__top-block">
           <button
             type="button"
@@ -67,7 +67,7 @@
       </div>
     </aside>
 
-    <aside class="request-call">
+    <aside class="request-call" id="request-call">
       <div class="content">
         <button
           type="button"
@@ -86,14 +86,16 @@
             autofocus
           />
         </form>
-        <p
-          >Нажимая “отправить”, вы даете согласие на
-          <span>обработку персональных данных</span> и соглашаетесь с нашей
-          <span>олитикой конфиденциальности</span></p
-        >
-        <button class="content__btn swiper-slide__order" type="button"
-          >Отправить<i></i
-        ></button>
+        <div class="content__footer">
+          <p
+            >Нажимая “отправить”, вы даете согласие на
+            <span>обработку персональных данных</span> и соглашаетесь с нашей
+            <span>олитикой конфиденциальности</span></p
+          >
+          <button class="content__btn swiper-slide__order" type="button"
+            >Отправить<i></i
+          ></button>
+        </div>
       </div>
     </aside>
 
@@ -131,14 +133,16 @@
             placeholder="Сообщение"
           />
         </form>
-        <p
-          >Нажимая “отправить”, вы даете согласие на
-          <span>обработку персональных данных</span> и соглашаетесь с нашей
-          <span>олитикой конфиденциальности</span></p
-        >
-        <button class="content__btn swiper-slide__order" type="button"
-          >Отправить<i></i
-        ></button>
+        <div class="content__footer"></div>
+          <p
+            >Нажимая “отправить”, вы даете согласие на
+            <span>обработку персональных данных</span> и соглашаетесь с нашей
+            <span>олитикой конфиденциальности</span></p
+          >
+          <button class="content__btn swiper-slide__order" type="button"
+            >Отправить<i></i
+          ></button>
+        </div>
       </div>
     </aside>
 

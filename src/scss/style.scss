@@ -102,17 +102,6 @@ button {
   flex-direction: column;
 }
 
-.wrapper--hidden {
-  display: none;
-  // opacity: 0.1;
-  // height: 100vh;
-  // overflow: hidden;
-}
-
-.wrapper--open {
-  display: block;
-}
-
 h1 {
   font-family: $font-bold;
 }

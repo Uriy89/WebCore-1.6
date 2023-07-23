@@ -1,20 +1,25 @@
 .request-call {
   display: none;
-  height: 100vh;
+  height: 100%;
   background-color: $box-color;
   position: fixed;
+  z-index: 1000;
+}
+
+.request-call::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  height: 100%;
 }
 
 .request-call--open {
   display: block;
 }
 
-.request-call--hidden {
-  display: none;
-}
-
 .content {
-  margin-left: 16px;
+  padding-left: 16px;
   padding-top: 24px;
   span {
     color: $btn-order;
@@ -40,46 +45,49 @@
   }
 }
 
+.content__footer {
+  width: 288px;
+}
+
 @media screen and (min-width: 321px) and (max-width: 1119px) {
   .request-call {
-    width: 320px;
-    display: none;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 1;
+    position: fixed;
   }
 
-  .request-call--open {
-    height: 100vh;
-    display: block;
-    position: fixed;
+  .content {
+    height: 100vw;
+    width: 320px;
+    background-color: $box-color;
+    position: absolute;
     right: 0;
     z-index: 1000;
-    box-shadow: 3px 0 55px 0 gray;
+    box-shadow: 3px 0 55px 0 $form-border;
   }
 }
 
 @media screen and (min-width: 1120px) {
   .request-call {
-    width: 440px;
+    width: 100%;
     height: 100vw;
-    position: fixed;
-    right: 0;
     z-index: 100;
-    box-shadow: 3px 0 55px 0 gray;
-
     p {
       width: 376px;
     }
 
     .content {
-      margin-top: -15px;
+      width: 440px;
+      position: fixed;
+      right: 0;
+      box-shadow: 3px 0 55px 0 $form-border;
     }
 
     .content__btn {
       margin-left: 260px;
     }
-  }
-
-  .request-call--open {
-    display: inline-block;
   }
 
   #request-call__btn-close {
