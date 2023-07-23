@@ -642,18 +642,22 @@ span.swiper-pagination-bullet {
 
 .request-call {
   display: none;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
-  position: fixed; }
+  position: fixed;
+  z-index: 1000; }
+
+.request-call::-webkit-scrollbar {
+  display: none; }
+
+.content {
+  height: 100%; }
 
 .request-call--open {
   display: block; }
 
-.request-call--hidden {
-  display: none; }
-
 .content {
-  margin-left: 16px;
+  padding-left: 16px;
   padding-top: 24px; }
   .content span {
     color: #ff3e79; }
@@ -685,34 +689,39 @@ span.swiper-pagination-bullet {
   .request-call .content__btn i {
     margin-left: 8px; }
 
+.content__footer {
+  width: 288px; }
+
 @media screen and (min-width: 321px) and (max-width: 1119px) {
   .request-call {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 1;
+    position: fixed; }
+  .content {
+    height: 100vw;
     width: 320px;
-    display: none; }
-  .request-call--open {
-    height: 100vh;
-    display: block;
-    position: fixed;
+    background-color: #fff;
+    position: absolute;
     right: 0;
     z-index: 1000;
-    box-shadow: 3px 0 55px 0 gray; } }
+    box-shadow: 3px 0 55px 0 #eaeaea; } }
 
 @media screen and (min-width: 1120px) {
   .request-call {
-    width: 440px;
+    width: 100%;
     height: 100vw;
-    position: fixed;
-    right: 0;
-    z-index: 100;
-    box-shadow: 3px 0 55px 0 gray; }
+    z-index: 100; }
     .request-call p {
       width: 376px; }
     .request-call .content {
-      margin-top: -15px; }
+      width: 440px;
+      position: fixed;
+      right: 0;
+      box-shadow: 3px 0 55px 0 #eaeaea; }
     .request-call .content__btn {
       margin-left: 260px; }
-  .request-call--open {
-    display: inline-block; }
   #request-call__btn-close {
     position: absolute;
     left: -72px;
@@ -728,13 +737,16 @@ span.swiper-pagination-bullet {
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
-  z-index: 10;
   display: none; }
 
 .pop-menu--open {
-  display: block; }
+  display: block;
+  position: fixed;
+  height: 100vh;
+  overflow: auto;
+  z-index: 1000; }
 
-.pop-menu--hidden {
+.pop-menu--open::-webkit-scrollbar {
   display: none; }
 
 .pop-menu__top-block {
@@ -823,12 +835,11 @@ li.item {
 
 @media screen and (min-width: 321px) and (max-width: 1119px) {
   .pop-menu {
-    display: none;
+    width: 100%;
+    height: 100vh; }
+  .conent {
     width: 320px;
-    height: 100vh;
-    box-shadow: 3px 0 55px 0 gray; }
-  .pop-menu--open {
-    display: block; } }
+    box-shadow: 3px 0 55px 0 gray; } }
 
 @media screen and (min-width: 1120px) {
   .pop-menu {
@@ -854,10 +865,15 @@ li.item {
   display: none;
   background-color: #fff;
   position: fixed;
-  height: 100vh; }
+  height: 100vh;
+  z-index: 1000; }
+
+.content {
+  height: 100%; }
 
 .feedback--open {
-  display: block; }
+  display: block;
+  overflow-y: auto; }
 
 .form__item:last-child {
   height: 118px;
@@ -881,39 +897,44 @@ li.item {
   .feedback .content__btn i {
     margin-left: 8px; }
 
+.content__footer {
+  width: 288px; }
+
 @media screen and (min-width: 321px) and (max-width: 1119px) {
   .feedback {
-    width: 320px;
-    display: none; }
-  .feedback--open {
-    height: 100vw;
-    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 1;
     position: fixed;
+    overflow-y: auto; }
+  .content {
+    height: 100%;
+    width: 320px;
+    background-color: #fff;
+    position: absolute;
     right: 0;
     z-index: 1000;
-    box-shadow: 3px 0 55px 0 gray; }
-  .content {
-    margin-top: -15px; } }
+    box-shadow: 3px 0 55px 0 #eaeaea; } }
 
 @media screen and (min-width: 1120px) {
   .feedback {
-    width: 440px;
+    width: 100%;
     height: 100vw;
-    position: fixed;
-    z-index: 100;
-    right: 0;
-    box-shadow: 3px 0 55px 0 gray; }
+    z-index: 100; }
     .feedback p {
       width: 376px; }
+    .feedback .content {
+      width: 440px;
+      position: fixed;
+      right: 0;
+      box-shadow: 3px 0 55px 0 #eaeaea; }
     .feedback .content__btn {
       margin-left: 260px; }
   #feedback__btn-close {
     position: absolute;
     left: -72px;
-    top: 32px;
-    z-index: 100; }
-  .feedback--open {
-    display: block; } }
+    top: 32px; } }
 
 html {
   box-sizing: border-box; }
@@ -958,12 +979,6 @@ button {
 .wrapper {
   display: flex;
   flex-direction: column; }
-
-.wrapper--hidden {
-  display: none; }
-
-.wrapper--open {
-  display: block; }
 
 h1 {
   font-family: "TTLakesBold"; }
