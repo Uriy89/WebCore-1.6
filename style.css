@@ -642,7 +642,7 @@ span.swiper-pagination-bullet {
 
 .request-call {
   display: none;
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
   position: fixed;
   z-index: 1000; }
@@ -872,7 +872,7 @@ li.item {
 
 .feedback {
   display: none;
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
   position: fixed;
   z-index: 1000; }
