@@ -16,8 +16,8 @@ let flagReadMore = false
 const formName = document.getElementById('form__name')
 const phone = document.getElementById('request-call__phone')
 
-let screenWidth = window.onload
-const breakPoint = 1120
+let screenWidth = window.innerWidth
+const breakPoint = 1119
 
 ;(function width() {
   window.addEventListener('resize', function () {
@@ -41,6 +41,7 @@ function withOutBox() {
       requestCall.classList.remove('request-call--open')
       feedback.classList.remove('feedback--open')
       wrapper.classList.remove('wrapper--hidden')
+      menu.style.display = 'block'
     }
   })
 }
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'pop-menu__img-call':
         requestCall.classList.toggle('request-call--open')
         menu.classList.toggle('pop-menu--open')
-        if (screenWidth >= breakPoint) {
+        if (screenWidth > breakPoint) {
           wrapper.classList.add('wrapper--hidden')
           menu.style.display = 'none'
         }
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'pop-menu__img-chat':
         feedback.classList.toggle('feedback--open')
         menu.classList.toggle('pop-menu--open')
-        if (screenWidth >= breakPoint) {
+        if (screenWidth > breakPoint) {
           wrapper.classList.add('wrapper--hidden')
           menu.style.display = 'none'
         }
@@ -86,14 +87,14 @@ document.addEventListener('DOMContentLoaded', function () {
       case 'request-call__btn-close':
         requestCall.classList.toggle('request-call--open')
         wrapper.classList.remove('wrapper--hidden')
-        if (screenWidth >= breakPoint) {
+        if (screenWidth > breakPoint) {
           menu.style.display = 'block'
         }
         break
       case 'feedback__btn-close':
         feedback.classList.toggle('feedback--open')
         wrapper.classList.remove('wrapper--hidden')
-        if (screenWidth >= breakPoint) {
+        if (screenWidth > breakPoint) {
           menu.style.display = 'block'
         }
         break
