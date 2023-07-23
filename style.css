@@ -872,10 +872,13 @@ li.item {
 
 .feedback {
   display: none;
+  height: 100%;
   background-color: #fff;
   position: fixed;
-  height: 100vh;
   z-index: 1000; }
+
+.feedback::-webkit-scrollbar {
+  display: none; }
 
 .content {
   height: 100%; }
