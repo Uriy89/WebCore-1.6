@@ -1,0 +1,170 @@
+.pop-menu {
+  width: 100%;
+  height: 100vh;
+  background-color: $box-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  z-index: 10;
+  display: none;
+}
+
+.pop-menu--open {
+  display: block;
+}
+
+.pop-menu--hidden {
+  display: none;
+}
+
+.pop-menu__top-block {
+  display: flex;
+  justify-content: space-around;
+  height: 88px;
+  align-items: center;
+}
+
+.pop-menu__top-block img {
+  margin-left: -50px;
+}
+
+.pop-menu__burger-close {
+  margin-left: -10px;
+}
+
+.pop-menu__top-block .img-search {
+  margin-left: -5px;
+}
+
+li.item {
+  margin-left: -20px;
+  a {
+    color: $menu-color;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    font-family: $font-medium;
+  }
+}
+
+.pop__items .item {
+  font-weight: bolder;
+}
+
+.pop-menu__main .item:before {
+  content: url('../img/highlight.svg');
+  width: 4px;
+  height: 32px;
+  padding-left: 12px;
+  position: relative;
+  left: -52px;
+  top: 11px;
+  visibility: hidden;
+}
+
+.pop-menu__main .item:hover:before {
+  visibility: inherit;
+}
+
+.menu__items .item:hover {
+  font-weight: lighter;
+  font-size: 16px;
+  cursor: default;
+}
+
+.pop-menu__footer {
+  margin-top: 32px;
+  margin-left: 24px;
+}
+
+.pop-menu__footer .connect__btn {
+  margin-right: 16px;
+}
+
+.pop-menu__footer span {
+  display: block;
+}
+
+.leng-items {
+  display: flex;
+}
+
+.contacts {
+  margin-top: 16px;
+  a {
+    margin-top: 12px;
+    display: block;
+    font-weight: bolder;
+    color: $menu-color;
+  }
+}
+
+.contacts__phone-number {
+  font-size: 24px;
+  font-family: $font-bold;
+}
+
+.leng-items {
+  margin-top: 7px;
+}
+
+.leng-items__item {
+  font-weight: bolder;
+  margin-right: 7px;
+}
+
+.leng-items__item:last-child {
+  margin-right: 0;
+}
+
+.leng-items__item:hover {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 321px) and (max-width: 1119px) {
+  .pop-menu {
+    display: none;
+    width: 320px;
+    height: 100vh;
+
+    box-shadow: 3px 0 55px 0 $shadow;
+  }
+
+  .pop-menu--open {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .pop-menu {
+    display: block;
+    width: 320px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    overflow-y: auto;
+  }
+
+  .pop-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  #pop-menu__btn-close {
+    display: none;
+  }
+
+  .pop-menu__top-block {
+    margin-top: 20px;
+  }
+
+  .pop-menu__top-block img {
+    margin-left: -30px;
+  }
+
+  .pop-menu__footer {
+    margin-top: 150px;
+    padding-left: 9px;
+  }
+}

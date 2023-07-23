@@ -1,0 +1,157 @@
+.scroll__title {
+  padding-left: 16px;
+}
+
+.menu-list {
+  margin-top: 24px;
+  margin-left: 16px;
+}
+
+.menu-list__items {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.menu-list__items::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.box__text {
+  width: 288px;
+  height: 90px;
+}
+
+.box__read-more {
+  font-size: 16px;
+  padding-left: 32px;
+  font-weight: bolder;
+  line-height: 24px;
+}
+
+.box__read-more::before {
+  content: url('../img/icon.svg');
+  position: relative;
+  right: 10px;
+}
+
+.content__img {
+  padding-top: 16px;
+}
+
+.box__read-more--open {
+  font-size: 16px;
+  padding-left: 32px;
+  font-weight: bolder;
+  line-height: 24px;
+}
+
+.menu-list__item a {
+  color: $menu-color;
+}
+
+.menu-list__item {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.menu-list__item + .menu-list__item {
+  margin-left: 16px;
+}
+
+.menu-list__item:hover {
+  border: 2px solid $item-menu-hover;
+  border-radius: 6px;
+  background-color: $box-color;
+}
+
+.scroll__title {
+  padding-left: 16px;
+  font-family: $font-bold;
+}
+
+.menu-list {
+  margin-top: 24px;
+  margin-left: 16px;
+}
+
+.menu-list__items {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.menu-list__items::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.box__text {
+  font-family: 'TTLakes';
+  white-space: pre-wrap;
+  padding-left: 16px;
+  overflow: hidden;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.box__text--open {
+  height: auto;
+}
+
+.box__read-more--open::before {
+  content: url('../img/icon.svg');
+  display: inline-block;
+  position: relative;
+  right: 10px;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 321px) and (max-width: 1119px) {
+  .box__text {
+    width: 288px;
+    height: 160px;
+  }
+
+  .content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .content__img {
+    border-radius: 5px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .scroll__title {
+    position: absolute;
+    top: 20px;
+  }
+
+  .box__text {
+    width: 490px;
+    height: 160px;
+  }
+
+  .content-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .content__img {
+    width: 530px;
+    height: 280px;
+    border-radius: 5px;
+    padding-right: 50px;
+  }
+}

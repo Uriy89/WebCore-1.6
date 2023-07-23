@@ -1,0 +1,114 @@
+.header {
+  width: 100vw;
+  height: 88px;
+  overflow: auto;
+  background-color: $box-color;
+}
+
+.header::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+.header__menu-items {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.menu__item-call,
+.menu__item-chat,
+.menu__item-profile {
+  display: none;
+}
+
+.menu__item-burger {
+  margin-left: -25px;
+}
+
+.menu__item-logo {
+  margin-left: 16px;
+}
+
+.menu__item-repair {
+  margin-left: 39px;
+}
+
+@media screen and (min-width: 321px) and (max-width: 1119px) {
+  .header__menu-items {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .content-box {
+    overflow: auto;
+  }
+
+  .content-box::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu__item-call,
+  .menu__item-chat,
+  .menu__item-profile {
+    display: block;
+  }
+
+  .menu__item-logo {
+    flex-grow: 2;
+  }
+
+  .menu__item-repair {
+    margin-left: 40px;
+  }
+
+  .menu__item-checkstatus {
+    flex-grow: 0;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .header {
+    background-color: $main-color;
+  }
+
+  .header__menu-items {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    img,
+    .img-burger {
+      display: none;
+    }
+  }
+
+  .img-checkstatus {
+    position: absolute;
+    right: 60px;
+    top: 40px;
+  }
+
+  .img-checkstatus::before {
+    content: 'Статус ремонта';
+    white-space: nowrap;
+    position: relative;
+    right: 125px;
+  }
+
+  .img-repair {
+    position: absolute;
+    right: 270px;
+    top: 40px;
+  }
+
+  .img-repair::before {
+    display: none;
+  }
+
+  .img-repair::after {
+    content: 'Оставить заявку';
+    white-space: nowrap;
+    position: relative;
+    right: 135px;
+  }
+}

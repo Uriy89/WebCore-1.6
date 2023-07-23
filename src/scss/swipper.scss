@@ -1,0 +1,48 @@
+.swiper-slide__btn {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.slider__wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.swiper-wrapper--all {
+  height: auto;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  align-content: start;
+}
+
+.swiper-slide__btn {
+  width: 40px;
+  height: 40px;
+  background-color: $box-color;
+  border-radius: 50%;
+  border: 2px solid $btn-order;
+  position: absolute;
+  i {
+    border: solid $btn-order;
+    border-width: 0 3px 3px 0;
+    border-radius: 1px;
+    display: inline-block;
+    padding: 4px;
+    margin-right: 4px;
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: $pagination-active;
+}
+
+span.swiper-pagination-bullet {
+  background: $pagination;
+}
