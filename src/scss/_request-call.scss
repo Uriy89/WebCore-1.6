@@ -63,7 +63,7 @@
     width: 320px;
     background-color: $box-color;
     position: absolute;
-    right: 0;
+    right:0;
     z-index: 1000;
     box-shadow: 3px 0 55px 0 $form-border;
   }
@@ -89,7 +89,7 @@
       margin-left: 260px;
     }
   }
-
+  
   #request-call__btn-close {
     position: absolute;
     left: -72px;
